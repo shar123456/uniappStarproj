@@ -1,0 +1,1 @@
+<view class="prePic"><image src="{{cover}}" mode="widthFix" data-event-opts="{{[['longpress',[['operateImage',['$event']]]]]}}" bindlongpress="__e"></image></view>

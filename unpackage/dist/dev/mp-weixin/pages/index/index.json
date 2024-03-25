@@ -1,0 +1,6 @@
+{
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "score-com": "/components/scoreCom/scoreCom"
+  }
+}

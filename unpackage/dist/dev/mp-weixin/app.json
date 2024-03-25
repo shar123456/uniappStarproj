@@ -1,0 +1,56 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/Search/Search",
+        "pages/Search/SearchPart",
+        "pages/Profile/Profile",
+        "pages/details/details",
+        "pages/previewPicture/previewPicture",
+        "pages/Profile/login",
+        "pages/Profile/mine",
+        "pages/Profile/uploadPic",
+        "pages/Profile/about",
+        "pages/Profile/collect",
+        "pages/Profile/modifyName",
+        "pages/Profile/modifyBirthday",
+        "pages/Profile/modifyGender",
+        "pages/Profile/address",
+        "pages/Profile/order",
+        "pages/Profile/modifyAddress"
+    ],
+    "subPackages": [],
+    "window": {
+        "navigationBarTextStyle": "black",
+        "navigationBarTitleText": "Motic 工厂直营",
+        "navigationBarBackgroundColor": "#F8F8F8",
+        "backgroundColor": "#F8F8F8"
+    },
+    "tabBar": {
+        "color": "#7A7E83",
+        "selectedColor": "#d81e06",
+        "borderStyle": "black",
+        "backgroundColor": "#ffffff",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "iconPath": "static/images/barIcon/index.png",
+                "selectedIconPath": "static/images/barIcon/indexHL.png",
+                "text": "首页"
+            },
+            {
+                "pagePath": "pages/Search/Search",
+                "iconPath": "static/images/barIcon/search.png",
+                "selectedIconPath": "static/images/barIcon/searchHL.png",
+                "text": "搜索"
+            },
+            {
+                "pagePath": "pages/Profile/Profile",
+                "iconPath": "static/images/barIcon/me.png",
+                "selectedIconPath": "static/images/barIcon/meHL.png",
+                "text": "个人中心"
+            }
+        ]
+    },
+    "usingComponents": {},
+    "sitemapLocation": "sitemap.json"
+}

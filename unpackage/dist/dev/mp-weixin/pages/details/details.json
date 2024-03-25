@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "商品详情",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "score-com": "/components/scoreCom/scoreCom",
+    "scroll-pic-com": "/components/scrollPicCom/scrollPicCom"
+  }
+}
