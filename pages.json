@@ -28,7 +28,7 @@
 				"navigationBarTitleText": "个人中心",
 				"enablePullDownRefresh": false,
 				"app-plus": {
-					"titleNView": false //禁用原生导航栏
+					//"titleNView": false //禁用原生导航栏
 				},
 				// "navigationBarTextStyle": "black",
 
