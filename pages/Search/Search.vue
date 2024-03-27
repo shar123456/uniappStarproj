@@ -2,11 +2,7 @@
 
 
 	<view class="container">
-<van-button type="default">默认按钮</van-button>
-<van-button type="primary">主要按钮</van-button>
-<van-button type="info">信息按钮</van-button>
-<van-button type="warning">警告按钮</van-button>
-<van-button type="danger">危险按钮</van-button>
+
 
 
 		<!-- 搜索 -->
@@ -95,7 +91,8 @@
 			<view class="" v-for="item in FactoryProductList" :key="item.id"
 				style="width: 49.5%;box-sizing: border-box;padding: 10upx;height: 550upx;border: 0px solid blue;;display: flex;justify-content: flex-start;flex-direction: column;">
 				<view class="" style="width: 100%;height: 350upx;border: 1px solid #f1f7f9;">
-					<image  @click="GoDetailPage" :data-DetailId="item.id" :src="item.cover" style="width: 100%;height: 100%;">
+					<image @click="GoDetailPage" :data-DetailId="item.id" :src="item.cover"
+						style="width: 100%;height: 100%;">
 				</view>
 				<view class="" style="width: 100%;height: 200upx;border: 1px solid #f1f7f9;
 				box-sizing: border-box;padding: 10upx;;
@@ -141,6 +138,7 @@
 	import common from "../../static/js/common.js";
 	/* 导入评分组件 */
 	import scoreCom from "../../components/scoreCom/scoreCom.vue";
+	import $https from "../../static/js/AppRequest.js"
 	export default {
 		components: {
 			scoreCom
@@ -169,6 +167,7 @@
 
 
 		},
+
 		onLoad() {
 
 
@@ -177,8 +176,10 @@
 			// });
 
 
-
-
+			this.testFunc().then((r) => {
+				console.log(r)
+			})
+			
 
 		},
 		//上拉触发
@@ -214,6 +215,18 @@
 			})
 		},
 		methods: {
+
+
+
+
+			async testFunc() {
+				return await ($https.requestT({
+					url: "https://api.vvhan.com/api/ian/rand",
+					data: {}
+				}))
+			},
+
+
 			changeRecommendation() {
 				new Promise((res, rej) => {
 					setTimeout(() => {
@@ -249,14 +262,14 @@
 				})
 			},
 			clickSearchCategory(e) {
-				
-				
-				
+
+
+
 				//console.log(Id)
 				uni.navigateTo({
-				    url: "../Search/SearchPart?categoryTemp="+e+'&searchType=category',
+					url: "../Search/SearchPart?categoryTemp=" + e + '&searchType=category',
 				});
-				
+
 				/* uni.showLoading({
 					title: "loading..."
 				})
@@ -267,8 +280,8 @@
 					uni.hideNavigationBarLoading();
 					uni.hideLoading(); //隐藏loading提示框
 				}); */
-				
-				
+
+
 				/* uni.showModal({
 				    title: '提示',
 				    content: '暂不支持，该功能正在完善...',
@@ -281,7 +294,7 @@
 				    }
 				});
 				 */
-				
+
 
 			},
 			searchBtn(e) {
@@ -309,21 +322,21 @@
 				})
 			},
 			searchBtnTo(e) {
-				let txtValue = e.detail.value;			
+				let txtValue = e.detail.value;
 				this.keyWord = txtValue;
-				
+
 				//console.log(Id)
 				uni.navigateTo({
-				    url: "../Search/SearchPart?keyWord="+txtValue,
+					url: "../Search/SearchPart?keyWord=" + txtValue,
 				});
-				
+
 			},
 			//跳转到商品详情页面
 			GoDetailPage(e) {
 				let Id = e.currentTarget.dataset.detailid;
 				//console.log(Id)
 				uni.navigateTo({
-				    url: "../details/details?Id="+Id,
+					url: "../details/details?Id=" + Id,
 				});
 			}
 		}
